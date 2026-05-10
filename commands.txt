@@ -1,0 +1,25 @@
+commands
+
+2-Server:
+
+idlj -fall ReverseModule.idl
+javac *.java ReverseModule/*.java
+orbd -ORBInitialPort 1050&
+java ReverseServer -ORBInitialPort 1050& -ORBInitialHost localhost&
+
+Client:
+
+java ReverseClient -ORBInitialPort 1050 -ORBInitialHost localhost
+
+
+
+3- mpicc mpi_sum.c
+mpirun -np 4 ./a.out
+
+4- python3 client.py
+python3 server.py
+
+5- java tokenring.java
+
+6- java ring.java
+java bully.java
